@@ -52,7 +52,7 @@
               <i class="fontawesome fa fa-facebook-square fa-3x"></i><br/>facebook</a>
             </div>
             
-          <a class="brand" href="home"><img src="/images/Brand.png" /></a>
+          <a class="brand" href="home"><img src="/images/brand.png" /></a>
           <div class="container nav-collapse">
             <ul class="nav nav-pills">
               <li class="<%= 'active' if current_page?(root_path) %>">
@@ -92,9 +92,17 @@
                   <% end %>
               </li> 
             
-              <li><small><%= link_to "Sign Out", destroy_admin_session_path, method: :delete if current_admin %></small></li><br/>
+              <li>
+                <small>
+                  <%= link_to "Sign Out", destroy_admin_session_path, method: :delete if current_admin %>
+                </small>
+              </li><br/>
 
-              <li><small><%= link_to "Contacts", admin_contacts_path, method: :get if current_admin %></small></li><br/>
+              <li>
+                <small>
+                  <%= link_to "Contacts", admin_contacts_path, method: :get if current_admin %>
+                </small>
+              </li><br/>
             
               
 
