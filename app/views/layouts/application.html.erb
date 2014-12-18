@@ -36,111 +36,112 @@
 
     <%= javascript_include_tag "application" %>
   </head>
-  <body>
-
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-
-          <div class="pull-right">
-              <a href="https://www.facebook.com/photo.php?fbid=3929889931327" target="_blank">
-              <i class="fontawesome fa fa-facebook-square fa-3x"></i><br/>facebook</a>
-            </div>
-            
-          <a class="brand" href="home"><img src="/images/brand.png" /></a>
-          <div class="container nav-collapse">
-            <ul class="nav nav-pills">
-              <li class="<%= 'active' if current_page?(root_path) %>">
-                  <%=link_to root_path do %>
-                  <i class="icon-white icon-home"></i>
-                    Home
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(mission_path) %>">
-                  <%=link_to "/mission" do %>
-                    Mission
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(about_path) %>">
-                  <%=link_to "/about" do %>
-                    About
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(event_path) %>">
-                  <%=link_to "/event" do %>
-                    Event
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(info_path) %>">
-                  <%=link_to "/info" do %>
-                    Info
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(contact_path) %>">
-                  <%=link_to "/contact" do %>
-                    Contact
-                  <% end %>
-              </li> 
-              <li class="<%= 'active' if current_page?(donation_path) %>">
-                  <%=link_to "/donation" do %>
-                    Donate
-                  <% end %>
-              </li> 
-            
-              <li>
-                <small>
-                  <%= link_to "Sign Out", destroy_admin_session_path, method: :delete if current_admin %>
-                </small>
-              </li><br/>
-
-              <li>
-                <small>
-                  <%= link_to "Contacts", admin_contacts_path, method: :get if current_admin %>
-                </small>
-              </li><br/>
-            
-              
-
-              <!--<li><%= link_to "Mission", "/mission"  %></li> 
-              <li><%= link_to "Home", "/home"  %></li>
-              <li><%= link_to "About", "/about"  %></li>
-              <li><%= link_to "Event", "/event"  %></li>
-              <li><%= link_to "Info", "/info"  %></li>
-              <li><%= link_to "Contact", "/contact"  %></li>-->
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-          <div class="span12">
-            <%= bootstrap_flash %>
-            <%= yield %>
-          </div>
-        </div><!--/row-->
-    </div> <!-- /container -->
-
-    <div class="navbar navbar-fixed-bottom" id="copyr">
+  <body class="body">
+    <div class="container wrap">
+      <div class="navbar navbar-fluid-top ">
         <div class="navbar-inner">
           <div class="container">
-            <p class="pull-left copyr">
-              &copy; Company 2014 
-              <small class="designer"><a href="http://lkabadesign.org" target="_blank"> LKabaDesign</a></small>
-            </p>
-            <p> 
-              <% @date = Time.now %>
-                <small class="time pull-right"><%= @date.strftime("%A, %B #{@date.day.ordinalize}, %Y %I:%M%P") %></small>
-            </p>
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+
+            <div class="pull-right">
+                <a href="https://www.facebook.com/photo.php?fbid=3929889931327" target="_blank">
+                <i class="fontawesome fa fa-facebook-square fa-3x"></i><br/>facebook</a>
+              </div>
+              
+            <a class="brand" href="home"><img src="/images/brand.png" /></a>
+            <div class="container nav-collapse">
+              <ul class="nav nav-pills">
+                <li class="<%= 'active' if current_page?(root_path) %>">
+                    <%=link_to root_path do %>
+                    <i class="icon-white icon-home"></i>
+                      Home
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(mission_path) %>">
+                    <%=link_to "/mission" do %>
+                      Mission
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(about_path) %>">
+                    <%=link_to "/about" do %>
+                      About
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(event_path) %>">
+                    <%=link_to "/event" do %>
+                      Event
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(info_path) %>">
+                    <%=link_to "/info" do %>
+                      Info
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(contact_path) %>">
+                    <%=link_to "/contact" do %>
+                      Contact
+                    <% end %>
+                </li> 
+                <li class="<%= 'active' if current_page?(donation_path) %>">
+                    <%=link_to "/donation" do %>
+                      Donate
+                    <% end %>
+                </li> 
+              
+                <li>
+                  <small>
+                    <%= link_to "Sign Out", destroy_admin_session_path, method: :delete if current_admin %>
+                  </small>
+                </li><br/>
+
+                <li>
+                  <small>
+                    <%= link_to "Contacts", admin_contacts_path, method: :get if current_admin %>
+                  </small>
+                </li><br/>
+              
+                
+
+                <!--<li><%= link_to "Mission", "/mission"  %></li> 
+                <li><%= link_to "Home", "/home"  %></li>
+                <li><%= link_to "About", "/about"  %></li>
+                <li><%= link_to "Event", "/event"  %></li>
+                <li><%= link_to "Info", "/info"  %></li>
+                <li><%= link_to "Contact", "/contact"  %></li>-->
+              </ul>
+            </div><!--/.nav-collapse -->
           </div>
         </div>
-    </div>
+      </div><!--end nav bar and content-->
+      <div class="container contentwrap">
+        <div class="container">
+            <div class="row">
+              <div class="span12">
+                <%= bootstrap_flash %>
+                <%= yield %>
+              </div>
+            </div><!--/row-->
+        </div> <!-- /container -->
 
+        <div class="navbar navbar-fixed-bottom" id="copyr">
+            <div class="navbar-inner">
+              <div class="container">
+                <p class="pull-left copyr">
+                  &copy; Company 2014 
+                  <small class="designer"><a href="http://lkabadesign.org" target="_blank"> LKabaDesign</a></small>
+                </p>
+                <p> 
+                  <% @date = Time.now %>
+                    <small class="time pull-right"><%= @date.strftime("%A, %B #{@date.day.ordinalize}, %Y %I:%M%P") %></small>
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div> <!--end wrap--> 
   </body>
 </html>

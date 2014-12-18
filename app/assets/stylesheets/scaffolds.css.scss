@@ -1,9 +1,20 @@
 body {
-  background-color: #F4F4CD;
+  background-color: #097284;
   color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 15px;
   line-height: 18px;
+}
+
+.wrap {
+  background-color: #F4F4CD;
+  width: 90%;
+  
+}
+
+.contentwrap {
+  
+  padding: 10px;
 }
 
 p, ol, ul, td {
